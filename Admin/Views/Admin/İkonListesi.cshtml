@@ -1,0 +1,25 @@
+﻿@using Admin.Models.Sınıflar;
+@model List<İkonlar>
+@{
+    ViewData["Title"] = "İkonListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Ikon</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td><i class="@x.İkon"></i></td>
+            <td><a href="" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
