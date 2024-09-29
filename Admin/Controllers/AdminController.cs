@@ -79,6 +79,16 @@ namespace Admin.Controllers
     
           }
 
+        public IActionResult İkonSil(int Id)
+        {
+
+            var sl = _context.İkons.Find(Id);
+            _context.İkons.Remove(sl);
+            _context.SaveChanges();
+            return RedirectToAction("İkonListesi");
+
+        }
+
 
     }
 }

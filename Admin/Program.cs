@@ -1,5 +1,6 @@
 using Admin.Models.Sýnýflar;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,16 @@ builder.Services.AddDbContext<Context>(options =>
 
 // Kontrolcüler ve görünümler için hizmetleri ekle
 builder.Services.AddControllersWithViews();
+
+// Kimlik doðrulama için Cookie ekle
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Login/Index"; // Oturum açma sayfasý
+    });
+
+// Oturum desteði ekle
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -24,7 +35,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Kimlik doðrulama ve oturum yönetimini ekleyin
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession(); // Oturum yönetimi
 
 app.MapControllerRoute(
     name: "default",
