@@ -45,5 +45,40 @@ namespace Admin.Controllers
             return View(deger);
         }
 
+        [HttpGet]
+        public IActionResult YeniIkon()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult YeniIkon(İkonlar p)
+        {
+
+            _context.İkons.Add(p);
+            _context.SaveChanges();
+            return RedirectToAction("İkonListesi");
+        }
+
+        public IActionResult İkonGetir(int Id)
+        {
+
+            var ig = _context.İkons.Find(Id);
+            return View("İkonGetir", ig);
+
+        }
+
+        public IActionResult İkonGüncelle(İkonlar x)
+          {
+    
+                var ig = _context.İkons.Find(x.Id);
+                ig.İkon = x.İkon;
+                ig.Link = x.Link;
+                _context.SaveChanges();
+                return RedirectToAction("İkonListesi");
+    
+          }
+
+
     }
 }

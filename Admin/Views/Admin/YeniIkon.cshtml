@@ -1,0 +1,22 @@
+﻿@model Admin.Models.Sınıflar.İkonlar
+@{
+    ViewData["Title"] = "YeniIkon";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Ikon Ekle</h1>
+<br />
+
+   <form class="=form-group" method="post">
+       @Html.LabelFor(x => x.İkon)
+       @Html.TextBoxFor(x => x.İkon, new { @class = "form-control" })
+
+       <br/>
+
+       @Html.LabelFor(x => x.Link)
+       @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+
+       <br/>
+
+       <button type="submit" class="btn btn-success">Ekle</button>
+   </form>

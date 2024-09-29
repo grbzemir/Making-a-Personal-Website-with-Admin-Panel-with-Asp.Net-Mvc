@@ -4,6 +4,7 @@
     ViewData["Title"] = "İkonListesi";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+ <h2 class="mb-4">İkonlar Sayfası</h2>
 
 <table class="table table-bordered">
     <tr>
@@ -18,8 +19,10 @@
         <tr>
             <td>@x.Id</td>
             <td><i class="@x.İkon"></i></td>
-            <td><a href="" class="btn btn-primary">Güncelle</a></td>
-            <td><a href="" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/İkonGetir/@x.Id" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 </table>
+   
+<a href="/Admin/YeniIkon/" class="btn btn-primary">Yeni İkon Ekle</a>
