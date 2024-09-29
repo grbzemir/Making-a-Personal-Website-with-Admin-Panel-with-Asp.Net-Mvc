@@ -1,4 +1,5 @@
 ﻿using Admin.Models.Sınıflar;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Admin.Controllers
@@ -12,7 +13,7 @@ namespace Admin.Controllers
         {
             _context = context;
         }
-    
+        [Authorize]
         public IActionResult Index()
         {
             var deger = _context.Anasayfas.ToList();
