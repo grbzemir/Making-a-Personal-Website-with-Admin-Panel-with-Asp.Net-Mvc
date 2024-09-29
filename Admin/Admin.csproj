@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\WebAdminPanelLoginn\.dist\" />
+    <Folder Include="wwwroot\WebKişiselProje\.dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\WebAdminPanelLoginn\images\Admin.jpg" />
+    <None Include="wwwroot\WebAdminPanelLoginn\images\images %281%29.jpg" />
+    <None Include="wwwroot\WebAdminPanelLoginn\index.html" />
+    <None Include="wwwroot\WebAdminPanelLoginn\style.css" />
+    <None Include="wwwroot\WebKişiselProje\image\col%282%29.jpg" />
+    <None Include="wwwroot\WebKişiselProje\image\Emir.jpg" />
+    <None Include="wwwroot\WebKişiselProje\image\foto.jpg" />
+    <None Include="wwwroot\WebKişiselProje\index.html" />
+    <None Include="wwwroot\WebKişiselProje\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
+  </ItemGroup>
+
+</Project>
