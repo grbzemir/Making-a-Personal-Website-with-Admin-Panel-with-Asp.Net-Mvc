@@ -69,16 +69,25 @@ namespace Admin.Controllers
 
         }
 
-        public IActionResult İkonGüncelle(İkonlar x)
-          {
+          //public IActionResult İkonGüncelle(İkonlar x)
+          //{
     
-                var ig = _context.İkons.Find(x.Id);
-                ig.İkon = x.İkon;
-                ig.Link = x.Link;
-                _context.SaveChanges();
-                return RedirectToAction("İkonListesi");
+          //      var ig = _context.İkons.Find(x.Id);
+          //      ig.İkon = x.İkon;
+          //      ig.Link = x.Link;
+          //      _context.SaveChanges();
+          //      return RedirectToAction("İkonListesi");
     
-          }
+          //}
+
+        public ActionResult İkonGuncelle(İkonlar x)
+        {
+            var ig = _context.İkons.Find(x.Id);
+            ig.İkon = x.İkon;
+            ig.Link = x.Link;
+            _context.SaveChanges();
+            return RedirectToAction("İkonListesi");
+        }
 
         public IActionResult İkonSil(int Id)
         {
